@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/doctors')
-.then(() => {
-    console.log('Connected to MongoDB');
-})
-.catch((err) => {
-    console.log('Error connecting to MongoDB', err);
-});
+mongoose.connect('mongodb://127.0.0.1:27017/doctors')
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((err) => {
+        console.log('Error connecting to MongoDB', err);
+    });
 
 const doctorSchema = new mongoose.Schema({
     name: {
@@ -25,4 +25,4 @@ const doctorSchema = new mongoose.Schema({
 
 const Doctor = mongoose.model('Doctor', doctorSchema);
 
-module.exports =Doctor;
+module.exports = Doctor;
